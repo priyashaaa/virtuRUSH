@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>virtuRUSH</title>
+    <link href="https://codechangers.com/steer.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://codechangers.com/physics.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Environment -->
+      <a-entity environment=" preset:forest;"></a-entity>
+      <a-plane static-body height="1000" width="1000" position="0 -0.02 0" color="green" rotation="-90 0 0"></a-plane>
+
+      <!-- Car -->
+      <a-entity static-body id="car" position="0 0 16">
+        <a-box position="0 1 -1.4" color="#0761B3" height="0.75" width="2" depth="4"></a-box> <!-- Car Body -->
+        <a-box position="0 1.75 -1.15" color="#0761B3" height="0.8" width="1.6" depth="2"></a-box> <!-- Car Top -->
+
+        <a-box position="0 1.75 -1.14" color="white" height="0.6" width="1.4" depth="2.03"></a-box> <!-- Windshield -->
+        <a-box position="-0.01 1.75 -1.59" color="white" height="0.6" width="1.63" depth="1"></a-box> <!-- Front Window -->
+        <a-box position="-0.01 1.75 -0.55" color="white" height="0.6" width="1.63" depth="0.5"> <!-- Back Window -->
+          
+          <a-entity id="rig" position="0 0.5 6">
+          <a-camera id="camera"></a-camera>
+          </a-entity>
+
+        </a-box> 
+
+        <!-- Tires -->
+        <a-cylinder height="0.25" radius="0.4" position="1 0.6 0" color="black" rotation="0 0 90"></a-cylinder> <!-- Back Right  -->
+        <a-cylinder height="0.25" radius="0.4" position="-1 0.6 0" color="black" rotation="0 0 90"></a-cylinder> <!-- Back Left  -->
+        <a-cylinder height="0.25" radius="0.4" position="1 0.6 -2.4" color="black" rotation="0 0 90"></a-cylinder> <!-- Front Right  -->
+        <a-cylinder height="0.25" radius="0.4" position="-1 0.6 -2.4" color="black" rotation="0 0 90"></a-cylinder> <!-- Front Left  -->
+
+
+        <!-- Headlights -->
+        <a-cylinder height="0.1" radius="0.2" position="-0.6 1 -3.4" color="yellow" rotation="0 90 90"></a-cylinder> <!-- Front Left  -->
+        <a-cylinder height="0.1" radius="0.2" position="0.6 1 -3.4" color="yellow" rotation="0 90 90"></a-cylinder> <!-- Front Right  -->
+        <a-cylinder height="0.1" radius="0.2" position="-0.6 1 0.6" color="red" rotation="0 90 90"></a-cylinder> <!-- Back Left  -->
+        <a-cylinder height="0.1" radius="0.2" position="0.6 1 0.6" color="red" rotation="0 90 90"></a-cylinder> <!-- Back Right  -->
+        
+      </a-entity>
+
+ 
+      <!-- making cone as entity// gltf model -->
+      
+
+      
+      
+
+          <a-entity dynamic-body="mass:  1;  linearDamping:  0;  angularDamping:  0" position="5 0 -4">
+        <a-cone height="1" radius-bottom="0.4" position="0 0.717 0" color="#FBA103"></a-cone>
+        <a-box height="0.8" width="1" depth="1" position="0 0.03 0" color="#FBA103" material="" geometry="height: 0.5"></a-box>
+      </a-entity>
+
+      <a-entity dynamic-body="mass:  1;  linearDamping:  0;  angularDamping:  0" position="-5 0 4">
+        <a-cone height="1" radius-bottom="0.4" position="0 0.717 0" color="#FBA103"></a-cone>
+        <a-box height="0.8" width="1" depth="1" position="0 0.03 0" color="#FBA103" material="" geometry="height: 0.5"></a-box>
+        </a-entity>
+
+      <a-entity dynamic-body="mass:  1;  linearDamping:  0;  angularDamping:  0" position="5 0 0">
+        <a-cone height="1" radius-bottom="0.4" position="0 0.717 0" color="#FBA103"></a-cone>
+        <a-box height="0.8" width="1" depth="1" position="0 0.03 0" color="#FBA103" material="" geometry="height: 0.5"></a-box>
+      </a-entity>
+
+      <a-entity dynamic-body="mass:  1;  linearDamping:  0;  angularDamping:  0" position="-5 0 0">
+        <a-cone height="1" radius-bottom="0.4" position="0 0.717 0" color="#FBA103"></a-cone>
+        <a-box height="0.8" width="1" depth="1" position="0 0.03 0" color="#FBA103" material="" geometry="height: 0.5"></a-box>
+        </a-entity>
+
+
+      
+      <a-entity dynamic-body="mass:  1;  linearDamping:  0;  angularDamping:  0" position="5 0 -8">
+        <a-cone height="1" radius-bottom="0.4" position="0 0.717 0" color="#FBA103"></a-cone>
+        <a-box height="0.8" width="1" depth="1" position="0 0.03 0" color="#FBA103" material="" geometry="height: 0.5"></a-box>
+      </a-entity>
+
+      <a-entity dynamic-body="mass:  1;  linearDamping:  0;  angularDamping:  0" position="-5 0 8">
+        <a-cone height="1" radius-bottom="0.4" position="0 0.717 0" color="#FBA103"></a-cone>
+        <a-box height="0.8" width="1" depth="1" position="0 0.03 0" color="#FBA103" material="" geometry="height: 0.5"></a-box>
+        </a-entity>
+
+
+      <a-entity dynamic-body="mass:  1;  linearDamping:  0;  angularDamping:  0" position="5 0 -12">
+        <a-cone height="1" radius-bottom="0.4" position="0 0.717 0" color="#FBA103"></a-cone>
+        <a-box height="0.8" width="1" depth="1" position="0 0.03 0" color="#FBA103" material="" geometry="height: 0.5"></a-box>
+      </a-entity>
+
+      <a-entity dynamic-body="mass:  1;  linearDamping:  0;  angularDamping:  0" position="-5 0 12">
+        <a-cone height="1" radius-bottom="0.4" position="0 0.717 0" color="#FBA103"></a-cone>
+        <a-box height="0.8" width="1" depth="1" position="0 0.03 0" color="#FBA103" material="" geometry="height: 0.5"></a-box>
+        </a-entity>
+
+      <a-entity dynamic-body="mass: 1; linearDamping: 0; angularDamping: 0; sphereRadius: NaN" position="5 0.3 3.72181" velocity="">
+        <a-cone height="1" radius-bottom="0.4" position="0 0.717 0" color="#FBA103" material="" geometry=""></a-cone>
+        <a-box height="0.8" width="1" depth="1" position="0 0.03 0" color="#FBA103" material="" geometry="height: 0.5"></a-box>
+      </a-entity>
+
+      <a-entity dynamic-body="mass: 1; linearDamping: 0; angularDamping: 0; sphereRadius: NaN" position="5 0.3 8.10008" velocity="">
+        <a-cone height="1" radius-bottom="0.4" position="0 0.717 0" color="#FBA103" material="" geometry=""></a-cone>
+        <a-box height="0.8" width="1" depth="1" position="0 0.03 0" color="#FBA103" material="" geometry="height: 0.5"></a-box>
+      </a-entity>
+
+      <a-entity dynamic-body="mass: 1; linearDamping: 0; angularDamping: 0; sphereRadius: NaN" position="5 0.3 11.91498" velocity="">
+        <a-cone height="1" radius-bottom="0.4" position="0 0.717 0" color="#FBA103" material="" geometry=""></a-cone>
+        <a-box height="0.8" width="1" depth="1" position="0 0.03 0" color="#FBA103" material="" geometry="height: 0.5"></a-box>
+      </a-entity>
+
+      <a-entity dynamic-body="mass: 1; linearDamping: 0; angularDamping: 0; sphereRadius: NaN" position="-5.08567 0.3 -4.19032" velocity="">
+        <a-cone height="1" radius-bottom="0.4" position="0 0.717 0" color="#FBA103" material="" geometry=""></a-cone>
+        <a-box height="0.8" width="1" depth="1" position="0 0.03 0" color="#FBA103" material="" geometry="height: 0.5"></a-box>
+      </a-entity>
+
+        
+
+
+
+
+      
+    </a-scene>
+
+    <div class="controls">
+      <h1>Car Controls</h1>
+      <p id="up">I</p>
+      <div>
+        <p id="left">J</p>
+        <p id="down">K</p>
+        <p id="right">L</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://codechangers.com/steer.js"></script>
+  
+  </body>
+</html>
